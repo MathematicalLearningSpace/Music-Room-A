@@ -1,2 +1,72 @@
 
 Title: R Program Template for Music Machine Learning
+
+#--------------------------Deep Learning---------------------
+library(deepnet)
+library(darch)
+library(FCNN4R)
+library(ForecastCombinations)
+library(EbayesThresh)
+library(HMM)
+library(markovchain)
+#------------------------Data Processing--------------------
+library(XML)
+library(xml2)
+library(XML2R)
+library(seqinr)
+library(methods)
+library(dplyr)
+library(Matrix)
+library(pracma)
+library(expm)
+#-----------------------Signal Processing-------------------
+library(audio)
+library(tuneR)
+library(dtw)
+library(wavelets)
+library(dtwclust)
+library(TSclust)
+library(TSdist)
+#----------------------Parallel Processing------------------
+library(parallel)
+library(microbenchmark)
+
+album<-c("A","B","C","D","E","F","G","H","I","J)
+album.df<-data.frame()
+
+music.track.1<-read_xml(album[1])
+music.track.2<-read_xml(album[2])
+music.track.3<-read_xml(album[3])
+music.track.4<-read_xml(album[4])
+music.track.5<-read_xml(album[5])
+music.track.6<-read_xml(album[6])
+music.track.7<-read_xml(album[7])
+music.track.8<-read_xml(album[8])
+music.track.9<-read_xml(album[9])
+music.track.10<-read_xml(album[10])
+
+#-------------------------------------Function Library------------------
+tag.remove <- function(tagString) {
+  return(gsub("<.*?>", "", tagString))
+}
+f.1<-function(X)
+{
+  Seq<-NULL
+  for(i in 1:nrow(X))
+  {
+    #-------------------Filtering-------------------------- 
+    #-------------------Framing----------------------------
+    #-------------------Windowing--------------------------
+    #------------------Fourier Transformations------------
+    #------------------Spectrum----------------------------
+    
+  }
+  
+  output<-list()
+  output$X<-X
+  output$Seq<-Seq
+  
+  return(output)
+}
+test.f.1<-f.1(LETTERS)
+test.f.1
