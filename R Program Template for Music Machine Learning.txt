@@ -70,3 +70,35 @@ f.1<-function(X)
 }
 test.f.1<-f.1(LETTERS)
 test.f.1
+
+#----------------------------------Search Models------------------------
+notes.1<-tag.remove(xml_find_all(music.track.1, ".//note//step"))
+notes.2<-tag.remove(xml_find_all(music.track.2, ".//note//step"))
+notes.3<-tag.remove(xml_find_all(music.track.3, ".//note//step"))
+notes.4<-tag.remove(xml_find_all(music.track.4, ".//note//step"))
+notes.5<-tag.remove(xml_find_all(music.track.5, ".//note//step"))
+notes.6<-tag.remove(xml_find_all(music.track.6, ".//note//step"))
+notes.7<-tag.remove(xml_find_all(music.track.7, ".//note//step"))
+notes.8<-tag.remove(xml_find_all(music.track.8, ".//note//step"))
+notes.9<-tag.remove(xml_find_all(music.track.9, ".//note//step"))
+notes.10<-tag.remove(xml_find_all(music.track.10, ".//note//step"))
+
+Album.notes<-cbind(notes.1,notes.2,notes.3,notes.4,notes.5,notes.6,notes.7,notes.8,notes.10)
+
+#-------------------------------Tables--------------------------------
+Table.1<-table(notes.1)
+Table.2<-table(notes.2)
+Table.3<-table(notes.3)
+Table.4<-table(notes.4)
+Table.5<-table(notes.5)
+Table.6<-table(notes.6)
+Table.7<-table(notes.7)
+Table.8<-table(notes.8)
+Table.9<-table(notes.9)
+Table.10<-table(notes.10)
+
+Table.1A<-table(Album.notes)
+Table.1A
+
+Table.2A<-summary(Album.notes)
+Table.2A
