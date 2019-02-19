@@ -85,6 +85,17 @@ notes.10<-tag.remove(xml_find_all(music.track.10, ".//note//step"))
 
 Album.notes<-cbind(notes.1,notes.2,notes.3,notes.4,notes.5,notes.6,notes.7,notes.8,notes.10)
 
+#--------------------------------Hidden Markov Models------------------
+
+Model.1<-markovchainFit(data = notes.1)
+Model.1A <- markovchainFit(data = notes.1, method = "bootstrap", nboot = 5, name = "Bootstrap Mc 1")
+
+#-------------------------------Properties-------------------------------
+
+Model.1$estimate@transitionMatrix
+chain.1 <- as(Model.1$estimate,"markovchain") 
+
+
 #-------------------------------Tables--------------------------------
 Table.1<-table(notes.1)
 Table.2<-table(notes.2)
@@ -102,3 +113,12 @@ Table.1A
 
 Table.2A<-summary(Album.notes)
 Table.2A
+
+#----------------------------Figures-----------------------------------
+png(file = stringr::str_join("Figure_","1",".png"))
+Figure.1<-dotPlot(notes.1, notes.1, main = "Direct repeat")
+dev.off()
+
+png(file = stringr::str_join("Graph_","1",".png"))
+plot(chain.1)
+dev.off()
