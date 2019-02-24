@@ -1,35 +1,13 @@
 
 Title: R Program Template for Music Machine Learning
-
 #--------------------------Deep Learning---------------------
-library(deepnet)
-library(darch)
-library(FCNN4R)
-library(ForecastCombinations)
-library(EbayesThresh)
-library(HMM)
-library(markovchain)
+library(deepnet);library(darch);library(FCNN4R);library(ForecastCombinations);library(EbayesThresh);library(HMM);library(markovchain)
 #------------------------Data Processing--------------------
-library(XML)
-library(xml2)
-library(XML2R)
-library(seqinr)
-library(methods)
-library(dplyr)
-library(Matrix)
-library(pracma)
-library(expm)
+library(XML);library(xml2);library(XML2R);library(seqinr);library(methods);library(dplyr);library(Matrix);library(pracma);library(expm)
 #-----------------------Signal Processing-------------------
-library(audio)
-library(tuneR)
-library(dtw)
-library(wavelets)
-library(dtwclust)
-library(TSclust)
-library(TSdist)
+library(audio);library(tuneR);library(dtw);library(wavelets);library(dtwclust);library(TSclust);library(TSdist)
 #----------------------Parallel Processing------------------
-library(parallel)
-library(microbenchmark)
+library(parallel);library(microbenchmark)
 
 album<-c("A","B","C","D","E","F","G","H","I","J)
 album.df<-data.frame()
@@ -114,7 +92,7 @@ Table.1A
 Table.2A<-summary(Album.notes)
 Table.2A
 
-#----------------------------Figures-----------------------------------
+#----------------------------Figures for Classroom-----------------------------------
 png(file = stringr::str_join("Figure_","1",".png"))
 Figure.1<-dotPlot(notes.1, notes.1, main = "Direct repeat")
 dev.off()
