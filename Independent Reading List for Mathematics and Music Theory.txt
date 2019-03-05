@@ -1,36 +1,36 @@
 
 \section{Group Theory}
 
-ATHANASE PAPADOPOULO (2014)
-MATHEMATICS AND GROUP THEORY IN MUSIC
+\bibitem[1]{key1}ATHANASE PAPADOPOULO (2014)
+\newblock MATHEMATICS AND GROUP THEORY IN MUSIC
 
-Kennedy, K. (2015)
-Mathematics and Music:Using Group Theory to Qualify N-­Note Tonal Systems
-Senior Honors Thesis Appalachian State University
+\bibitem[1]{key1} Kennedy, K. (2015)
+\newblock Mathematics and Music:Using Group Theory to Qualify N-­Note Tonal Systems
+\newblock Senior Honors Thesis Appalachian State University
 
 \section{Sine Wave Signal Processing}
 
-Fei Chen, Daniel Fogerty
-Factors Affecting the Intelligibility of Sine-wave Speech
+\bibitem[1]{key1} Fei Chen, Daniel Fogerty
+\newblock Factors Affecting the Intelligibility of Sine-wave Speech
 
-Navnath S Nehe1 and Raghunath S Holamb
-DWT and LPC based feature extraction methodsfor isolated word recognition
+\bibitem[1]{key1} Navnath S Nehe1 and Raghunath S Holamb
+\newblock DWT and LPC based feature extraction methodsfor isolated word recognition
 
-Yan-Mei Feng, Li XuS, Ning Zhou Guang Yang and Shan-Kai Yina (2012)
-Sine-wave speech recognition in a tonal language
-J. Acoust. Soc. Am.131(2)
+\bibitem[1]{key1}Yan-Mei Feng, Li XuS, Ning Zhou Guang Yang and Shan-Kai Yina (2012)
+\newblock Sine-wave speech recognition in a tonal language
+\newblock J. Acoust. Soc. Am.131(2)
 
 
 \section{Machine Learning}
 
-Filip Korzeniowski and Gerhard Widmer (2017)
-End-to-End Musical Key Estimation Using a Convolutional Neural Network
+\bibitem[1]{key1}Filip Korzeniowski and Gerhard Widmer (2017)
+\newblock End-to-End Musical Key Estimation Using a Convolutional Neural Network
 
-Pascal Attwenger
-Recognizing Musical Notation Using Artificial Neural Networks
+\bibitem[1]{key1}Pascal Attwenger
+\newblock Recognizing Musical Notation Using Artificial Neural Networks
 
-Ziheng Chen Jie Qi Yifei Zhou
-Machine Learning in Automatic Music Chords Generation
+\bibitem[1]{key1}Ziheng Chen Jie Qi Yifei Zhou
+\newblock Machine Learning in Automatic Music Chords Generation
 
-Stuart Cunningham
-SUITABILITY OF MUSICXML AS A FORMAT FOR COMPUTER MUSIC NOTATION & INTERCHANGE 
+\bibitem[1]{key1}Stuart Cunningham
+\newblock SUITABILITY OF MUSICXML AS A FORMAT FOR COMPUTER MUSIC NOTATION & INTERCHANGE 
