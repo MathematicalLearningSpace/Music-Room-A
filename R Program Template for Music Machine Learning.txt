@@ -1,4 +1,4 @@
-
+#-------------------------------------------R Program for Music Machine Learning and Generation----------------------------------
 Title: R Program Template for Music Machine Learning
 #--------------------------Deep Learning---------------------
 library(deepnet);library(darch);library(FCNN4R);library(ForecastCombinations);library(EbayesThresh);library(HMM);library(markovchain)
