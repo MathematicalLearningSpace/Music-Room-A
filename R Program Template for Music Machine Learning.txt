@@ -9,6 +9,9 @@ library(audio);library(tuneR);library(dtw);library(wavelets);library(dtwclust);l
 #----------------------Parallel Processing------------------
 library(parallel);library(microbenchmark)
 
+#---------------------Read Collection of Music Compositions for Album container---------------------------------
+#---------------------Each Upper or Lower Case Letter Represent a Music composition----------------------------
+
 album<-c("A","B","C","D","E","F","G","H","I","J)
 album.df<-data.frame()
 
@@ -23,10 +26,8 @@ music.track.8<-read_xml(album[8])
 music.track.9<-read_xml(album[9])
 music.track.10<-read_xml(album[10])
 
-#-------------------------------------Function Library------------------
-tag.remove <- function(tagString) {
-  return(gsub("<.*?>", "", tagString))
-}
+#----------------Function Library to Be Designed in the Classroom------------------
+
 f.1<-function(X)
 {
   Seq<-NULL
@@ -49,7 +50,10 @@ f.1<-function(X)
 test.f.1<-f.1(LETTERS)
 test.f.1
 
-#----------------------------------Search Models------------------------
+#-----------------------Deterministic Search Engine and Filtering Models------------------------
+tag.remove <- function(tagString) {
+  return(gsub("<.*?>", "", tagString))
+}
 notes.1<-tag.remove(xml_find_all(music.track.1, ".//note//step"))
 notes.2<-tag.remove(xml_find_all(music.track.2, ".//note//step"))
 notes.3<-tag.remove(xml_find_all(music.track.3, ".//note//step"))
