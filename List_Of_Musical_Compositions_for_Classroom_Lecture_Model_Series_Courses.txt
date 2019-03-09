@@ -1,1 +1,5 @@
 Title: List of Musical Compositions for Classroom Lecture Model Series Courses
+
+\hline
+MusicID & Name & Genre & Description & LectureID & Date & Curated & Comment \\
+\hline
