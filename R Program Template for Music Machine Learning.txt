@@ -1,3 +1,4 @@
+#-------------------------------------------------------------------------------------------------------------------------------
 #-------------------------------------------R Program for Music Machine Learning and Generation----------------------------------
 Title: R Program Template for Music Machine Learning
 #--------------------------Deep Learning---------------------
@@ -8,9 +9,11 @@ library(XML);library(xml2);library(XML2R);library(seqinr);library(methods);libra
 library(audio);library(tuneR);library(dtw);library(wavelets);library(dtwclust);library(TSclust);library(TSdist)
 #----------------------Parallel Processing------------------
 library(parallel);library(microbenchmark)
-
+#-------------------------------------------------------------------------------------------------------------------------------
 #---------------------Read Collection of Music Compositions for Album container---------------------------------
 #---------------------Each Upper or Lower Case Letter Represent a Music composition----------------------------
+
+#---------------------Data Files in Music XML------------------------------------------------------------------
 
 album<-c("A","B","C","D","E","F","G","H","I","J)
 album.df<-data.frame()
@@ -26,10 +29,29 @@ music.track.8<-read_xml(album[8])
 music.track.9<-read_xml(album[9])
 music.track.10<-read_xml(album[10])
 
-#----------------Function Library to Be Designed in the Classroom------------------
-
-f.1<-function(X)
+#----------------Function Library to Be Designed and Tested in the Classroom------------------
+Module.Music.1<-function(X)
 {
+#-------------------------Internal Functions ---------------------
+tag.remove <- function(tagString) {return(gsub("<.*?>", "", tagString))}
+#--------------Musical Objects-------------------------------------
+music.categories<-c("chord","pitch","step","alter","octave","duration","voice","type","stem","staff")
+Notes.By.Measure<-list();Notes.Duration<-list();Notes.By.Step<-list();Notes.By.Octave<-list();Notes.By.Pitch<-list()
+Model.1<-list();Model.Chain.1<-list();notes.series<-list()
+#-----------------Search Optimization and Filtering-----------------
+measures<-xml_find_all(X, ".//measure");Nbr.Measures<-length(measures)
+for(i in 1:length(measures))
+  {
+  Notes.By.Measure[[i]]<- xml_find_all(measures[i], ".//note")
+  Notes.Duration[[i]]<- as.numeric(tag.remove(xml_find_all(Notes.By.Measure[[i]], ".//duration")))
+  Notes.By.Step[[i]]<-tag.remove(xml_find_all(Notes.By.Measure[[i]], ".//step"))
+  Notes.By.Octave[[i]]<-tag.remove(xml_find_all(Notes.By.Measure[[i]], ".//octave"))
+  Notes.By.Pitch[[i]]<-tag.remove(xml_find_all(Notes.By.Measure[[i]], ".//pitch"))
+  notes<-unlist(Notes.By.Step)
+  octaves<-unlist(Notes.By.Octave)
+  Model.1[[i]]<-markovchainFit(data = notes)
+  Model.Chain.1[[i]]<-as(Model.1[[i]]$estimate,"markovchain") 
+}
   Seq<-NULL
   for(i in 1:nrow(X))
   {
@@ -40,15 +62,35 @@ f.1<-function(X)
     #------------------Spectrum----------------------------
     
   }
-  
-  output<-list()
-  output$X<-X
-  output$Seq<-Seq
-  
-  return(output)
+Model.1.Overall<-markovchainFit(data = notes)
+Model.Chain.1.Overall<-as(Model.1.Overall$estimate,"markovchain") 
+measures.notes<-xml_find_all(music.track.1, ".//measure//note")
+Nbr.Notes<-length(measures.notes)
+#-----------------------Tables--------------------------------
+Table.1<-table(notes)
+  #-----------------------Presentation and Organization--------------
+output<-list()
+output$Table.1<-xtable::xtable(as.data.frame(Table.1))
+output$Transition.Matrix.Table.1<-xtable::xtable(as.data.frame(Model.Chain.1.Overall))
+output$Table.1<-Table.1.df
+output$Nbr.Measures<-Nbr.Measures
+output$Nbr.Notes<-Nbr.Notes
+output$Notes.By.Measure<-Notes.By.Measure
+output$Notes.Duration<-Notes.Duration
+output$Note.Duration.Time.Series<-unlist(Notes.Duration)
+output$Notes.By.Step<-Notes.By.Step
+output$Notes.By.Octave<-Notes.By.Octave
+output$Notes.By.Octave<-Notes.By.Pitch
+output$Notes.Time.Series<-as.numeric(unlist(Notes.By.Step))
+output$Notes.Octave.Time.Series<-as.numeric(unlist(Notes.By.Octave))
+output$Notes.Pitch.Time.Series<-unlist(Notes.By.Pitch)
+output$Model.Chain.1<-Model.Chain.1
+#output$Piano.Keys.Time.Series<-piano.keys
+#output$piano.frequencies<-piano.frequencies
+return(output)
 }
-test.f.1<-f.1(LETTERS)
-test.f.1
+test.Module.Music.1<-Module.Music.1(music.track.1)
+test.Module.Music.1
 
 #-----------------------Deterministic Search Engine and Filtering Models------------------------
 tag.remove <- function(tagString) {
