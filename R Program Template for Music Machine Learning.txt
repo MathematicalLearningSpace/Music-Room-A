@@ -116,12 +116,11 @@ Album.notes<-cbind(notes.1,notes.2,notes.3,notes.4,notes.5,notes.6,notes.7,notes
 #----------------------------------------------------------------------
 Model.1<-markovchainFit(data = notes.1)
 Model.1A <- markovchainFit(data = notes.1, method = "bootstrap", nboot = 5, name = "Bootstrap Mc 1")
-
-#-------------------------------Properties-------------------------------
-
+#-------------------------------Properties----------------------------------------------------
+#-------------------------------Transition Matrices, Markov Chains and Graph Properties--------
+#----------------------------------------------------------------------------------------------
 Model.1$estimate@transitionMatrix
 chain.1 <- as(Model.1$estimate,"markovchain") 
-
 
 #-------------------------------Tables--------------------------------
 Table.1<-table(notes.1)
