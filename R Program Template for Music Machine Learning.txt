@@ -14,8 +14,7 @@ library(parallel);library(microbenchmark)
 #---------------------Each Upper or Lower Case Letter Represent a Music composition----------------------------
 
 #---------------------Data Files in Music XML------------------------------------------------------------------
-
-album<-c("A","B","C","D","E","F","G","H","I","J)
+album<-c("A.mxml","B.mxml","C.mxml","D.mxml","E.mxml","F.mxml","G.mxml","H.mxml","I.mxml","J.mxml")
 album.df<-data.frame()
 
 music.track.1<-read_xml(album[1])
