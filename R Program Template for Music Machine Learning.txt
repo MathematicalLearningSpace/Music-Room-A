@@ -16,7 +16,7 @@ library(parallel);library(microbenchmark)
 #---------------------Data Files in Music XML------------------------------------------------------------------
 album<-c("A.xml","B.xml","C.xml","D.xml","E.xml","F.xml","G.xml","H.xml","I.xml","J.xml")
 album.df<-data.frame()
-
+#---------------------Individual Tracks of the Music Compositions------------------------
 music.track.1<-read_xml(album[1])
 music.track.2<-read_xml(album[2])
 music.track.3<-read_xml(album[3])
@@ -65,9 +65,12 @@ Model.1.Overall<-markovchainFit(data = notes)
 Model.Chain.1.Overall<-as(Model.1.Overall$estimate,"markovchain") 
 measures.notes<-xml_find_all(music.track.1, ".//measure//note")
 Nbr.Notes<-length(measures.notes)
+
+
 #-----------------------Tables--------------------------------
 Table.1<-table(notes)
-  #-----------------------Presentation and Organization--------------
+
+#-----------------------Presentation and Organization--------------
 output<-list()
 output$Table.1<-xtable::xtable(as.data.frame(Table.1))
 output$Transition.Matrix.Table.1<-xtable::xtable(as.data.frame(Model.Chain.1.Overall))
@@ -90,8 +93,9 @@ return(output)
 }
 test.Module.Music.1<-Module.Music.1(music.track.1)
 test.Module.Music.1
-
+#-----------------------------------------------------------------------------------------------
 #-----------------------Deterministic Search Engine and Filtering Models------------------------
+#-----------------------------------------------------------------------------------------------
 tag.remove <- function(tagString) {
   return(gsub("<.*?>", "", tagString))
 }
@@ -107,9 +111,9 @@ notes.9<-tag.remove(xml_find_all(music.track.9, ".//note//step"))
 notes.10<-tag.remove(xml_find_all(music.track.10, ".//note//step"))
 
 Album.notes<-cbind(notes.1,notes.2,notes.3,notes.4,notes.5,notes.6,notes.7,notes.8,notes.10)
-
+#----------------------------------------------------------------------
 #--------------------------------Hidden Markov Models------------------
-
+#----------------------------------------------------------------------
 Model.1<-markovchainFit(data = notes.1)
 Model.1A <- markovchainFit(data = notes.1, method = "bootstrap", nboot = 5, name = "Bootstrap Mc 1")
 
